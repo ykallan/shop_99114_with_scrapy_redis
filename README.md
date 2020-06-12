@@ -9,9 +9,13 @@ settings里：
 
 
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
 SCHEDULER_PERSIST = True  # 是否去重，可以重启spider断点爬取
+
 SCHEDULER_QUEUECLASS = 'scrapy_redis.queue.SpiderQueue'
+
 REDIS_URL = 'redis://localhost:6379'  # redis服务器的地址
 
 
@@ -22,7 +26,7 @@ from scrapy_redis.spiders import RedisSpider  # 引入RedisSpider
 
 class HySpider(RedisSpider): # 让爬虫类继承 RedisSpider
 
-# start_urls = ['http://shop.99114.com/']  注释掉start_urls
+start_urls = ['http://shop.99114.com/']  注释掉start_urls
 redis_key = 'start_url'   添加一个key
 
 
