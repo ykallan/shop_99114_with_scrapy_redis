@@ -12,7 +12,7 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
-SCHEDULER_PERSIST = True  # 是否去重，可以重启spider断点爬取
+SCHEDULER_PERSIST = True  # 是否在关闭时候保留原来的调度器和去重记录，True=保留，False=清空
 
 SCHEDULER_QUEUECLASS = 'scrapy_redis.queue.SpiderQueue'
 
