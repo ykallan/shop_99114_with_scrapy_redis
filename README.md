@@ -45,3 +45,7 @@ scrapy crawl spider_name
 把其中的：bind 127.0.0.1 注释掉
 
 
+
+对于 scrapy_redis 的理解：
+
+主机并不一定要安装scrapy，只是建立了redis数据库，当作调度，以及传入初始的start_url操作，并不会因为叫做scrapy_master，就运行爬虫的代码。在scrapy_slave中，爬虫类继承于引入的RedisSpider， 并设置一个redis_key，在master中lpush 一个redis_key start_url即可，两个redis_key名称要一致。
